@@ -1,0 +1,17 @@
+name: 05-Multiple Steps in Single Jobs
+run-name: ${{ github.workflow }}
+on: workflow_dispatch
+jobs:
+    Job-1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Step-1
+              run: echo "Running Job-1 & Step-1"
+
+            - name: Step-2
+              run: echo "Running Job-1 & Step-2"
+
+            - name: Step-3
+              run: echo "Running Job-1 & Step-3"
+
+
