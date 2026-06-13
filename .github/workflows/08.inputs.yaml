@@ -11,6 +11,7 @@ on:
             target:
                 description: "Which environment the workflow will target"
                 type: environment
+                default: dev
                 
 jobs:
     build:
