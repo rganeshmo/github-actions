@@ -1,0 +1,13 @@
+name: 04 - Using Actions
+run-name: ${{ github.workflow }}
+on: workflow_dispatch
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: CheckOut Code
+              uses: actions/checkout@v4
+
+            - name: Printing Folders
+              run: echo "ls -l"
+
