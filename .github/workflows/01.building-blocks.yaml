@@ -4,7 +4,7 @@ on:
 
 jobs:
     echo-hello:
-        runs-on: ubutntu-latest
+        runs-on: ubuntu-latest
         steps:
           - name: Say Hello
             run: echo "Hello, World"
