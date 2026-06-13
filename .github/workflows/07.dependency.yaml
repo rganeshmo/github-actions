@@ -1,0 +1,17 @@
+name: 07-Dependency Jobs
+run-name: ${{ github.workflow }}
+on: workflow_dispatch
+jobs:
+    Build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: build_step
+              run: echo "Running Test Job & Step"
+
+
+    Test:
+        runs-on: windows-latest
+        needs: Build
+        steps:
+            - name: test_step
+              run: echo "Running Test Job & Step"      
