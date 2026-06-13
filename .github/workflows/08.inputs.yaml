@@ -1,0 +1,22 @@
+name: 08 - Working with Inputs
+run-name: ${{ github.workflow }}
+on: 
+    workflow_dispatch:
+        inputs:
+            dry-run:
+                description: "Skip deployment and only print build output"
+                type: boolean
+                default: true
+            
+            target:
+                description: "Which environment the workflow will target"
+                type: environment
+                
+jobs:
+    build:
+        runs-on: self-hosted
+        steps:
+            - name: Build
+              run: echo "Input Argument"
+
+
