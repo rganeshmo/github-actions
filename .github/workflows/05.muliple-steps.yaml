@@ -13,5 +13,3 @@ jobs:
 
             - name: Step-3
               run: echo "Running Job-1 & Step-3"
-
-
