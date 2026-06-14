@@ -1,4 +1,4 @@
-name: 09 - Variables On Workflow
+name: 09 - Variables On Workflow Level
 on: workflow_dispatch
 env:
     message: Welcome
@@ -17,4 +17,4 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Display
-              run: echo "$message $first"
+              run: echo "$message"

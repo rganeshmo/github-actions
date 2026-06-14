@@ -1,0 +1,14 @@
+name: 10 - Configuration Variables Repo Level
+on: workflow_dispatch
+jobs:
+    build:
+        runs-on: self-hosted
+        steps:
+            - name: Display Variable from Repo
+              run: echo "Name is ${{ vars.name }}"
+
+    test:
+        runs-on: self-hosted
+        steps:
+            - name: Display Variable from Repo
+              run: echo "Name is ${{ vars.name }}"
