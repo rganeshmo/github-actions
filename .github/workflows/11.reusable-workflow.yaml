@@ -7,7 +7,7 @@ jobs:
             environment: dev  
         steps:
             - name: Build Job
-              run: This job is running on $environment
+              run: echo "This job is running on $environment"
 
     test:
         runs-on: self-hosted
@@ -16,7 +16,7 @@ jobs:
             enviroment: test
         steps:
             - name: Build Job
-              run: This job is running on $environment
+              run: echo "This job is running on $environment"
 
     deploy:
         runs-on: self-hosted
@@ -25,6 +25,6 @@ jobs:
             enviroment: prod
         steps:
             - name: Build Job
-              run: This job is running on $environment
+              run: echo "This job is running on $environment"
 
             
