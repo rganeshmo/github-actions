@@ -1,0 +1,30 @@
+name: 11 - Reusable Workflow
+on: workflow_call
+jobs:
+    build:
+        runs-on: self-hosted
+        env:
+            environment: dev  
+        steps:
+            - name: Build Job
+              run: This job is running on $environment
+
+    test:
+        runs-on: self-hosted
+        needs: build
+        env:
+            enviroment: test
+        steps:
+            - name: Build Job
+              run: This job is running on $environment
+
+    deploy:
+        runs-on: self-hosted
+        needs: [build, test]
+        env:
+            enviroment: prod
+        steps:
+            - name: Build Job
+              run: This job is running on $environment
+
+            
