@@ -1,0 +1,20 @@
+name: 09 - Variables On Workflow
+on: workflow_dispatch
+env:
+    message: Welcome
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        env:
+            first-name: ganesh
+        steps:            
+            - name: Displaying Variable
+              run: echo "$message $first-name $last-name"
+              env:
+                last-name: moorthy
+
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Display
+              run: echo "$message $first-name"

@@ -1,4 +1,4 @@
-name: 07-Dependency Jobs
+name: 07 - Dependency Jobs
 run-name: ${{ github.workflow }}
 on: workflow_dispatch
 jobs:

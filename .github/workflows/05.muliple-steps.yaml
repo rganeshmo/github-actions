@@ -1,4 +1,4 @@
-name: 05-Multiple Steps in Single Jobs
+name: 05 - Multiple Steps in Single Jobs
 run-name: ${{ github.workflow }}
 on: workflow_dispatch
 jobs:

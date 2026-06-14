@@ -5,8 +5,10 @@ on:
         inputs:          
             target:
                 description: "Which environment the workflow will target"
-                type: string
-                default: dev
+                type: choice
+                options:
+                    - dev
+                    - prod                           
                 
 jobs:
     build:
