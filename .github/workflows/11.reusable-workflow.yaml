@@ -13,18 +13,18 @@ jobs:
         runs-on: self-hosted
         needs: build
         env:
-            enviroment: test
+            envi: test
         steps:
             - name: Build Job
-              run: echo "This job is running on $environment"
+              run: echo "This job is running on $envi"
 
     deploy:
         runs-on: self-hosted
         needs: [build, test]
         env:
-            enviroment: prod
+            envir: prod
         steps:
             - name: Build Job
-              run: echo "This job is running on $environment"
+              run: echo "This job is running on $envir"
 
             
