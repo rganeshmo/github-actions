@@ -6,15 +6,15 @@ jobs:
     build:
         runs-on: ubuntu-latest
         env:
-            first-name: ganesh
+            first: ganesh
         steps:            
             - name: Displaying Variable
-              run: echo "$message $first-name $last-name"
+              run: echo "$message $first $last"
               env:
-                last-name: moorthy
+                last: moorthy
 
     test:
         runs-on: ubuntu-latest
         steps:
             - name: Display
-              run: echo "$message $first-name"
+              run: echo "$message $first"
