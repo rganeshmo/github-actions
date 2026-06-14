@@ -12,3 +12,9 @@ jobs:
         steps:
             - name: Display Variable from Repo
               run: echo "Name is ${{ vars.name }}"
+
+    deploy:
+        runs-on: self-hosted
+        steps:
+            - name: Display Variable from Repo
+              run: echo "Name is ${{ secrets.name }}"
