@@ -13,19 +13,19 @@ jobs:
     build:
         runs-on: self-hosted
         env:
-          Environment: ${{ github.event.inputs.environment }}    
+          Environment: ${{ github.event.inputs.environment.dev }}
         steps:
-            - name: Displaying Variable Name
-              run: |
-                echo "Running in $Environment"
-                echo "${{ vars.DEPLOYMENTNAME}}"
+            - name: Build on Dev
+              run: | 
+                echo "$Environment"
+                echo "${{ vars.DEPLOYMENTNAME}}"                
         
     deploy:
         runs-on: self-hosted
         env:
-          Environment: ${{ github.event.inputs.environment }}            
+          Environment: ${{ github.event.inputs.environment.test }}            
         steps:
-          - name: Displaying Test Variable Name
+          - name: Build on Test
             run: |
               echo "Running in $Environment"
               echo "${{ vars.DEPLOYMENTNAME}}"
