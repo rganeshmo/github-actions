@@ -12,8 +12,10 @@ on:
 jobs:
     build:
         runs-on: self-hosted
+        if: ${{ github.event.inputs.environment == 'dev' }}
+        environment: dev
         env:
-          Environment: ${{ github.event.inputs.environment.dev }}
+          Environment: ${{ github.event.inputs.environment }}
         steps:
             - name: Build on Dev
               run: | 
@@ -22,8 +24,10 @@ jobs:
         
     deploy:
         runs-on: self-hosted
+        if: ${{ github.event.inputs.environment == 'test' }}
+        environment: test        
         env:
-          Environment: ${{ github.event.inputs.environment.test }}            
+          Environment: ${{ github.event.inputs.environment }}
         steps:
           - name: Build on Test
             run: |
