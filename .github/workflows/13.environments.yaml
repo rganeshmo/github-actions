@@ -1,21 +1,31 @@
 name: 13 - Environments
 on: 
-    workflow_dispatch: 
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Choose which environment to deloy
+        type: choice
+        options:
+          - dev
+          - test
+    
 jobs:
     build:
         runs-on: self-hosted
-        environment: dev
+        env:
+          Environment: ${{ github.event.inputs.environment }}    
         steps:
-            - name: Displaying Dev Variable Name
+            - name: Displaying Variable Name
               run: |
-                echo "Dev Environment"
+                echo "Running in $Environment"
                 echo "${{ vars.DEPLOYMENTNAME}}"
         
     deploy:
         runs-on: self-hosted
-        environment: test
+        env:
+          Environment: ${{ github.event.inputs.environment }}            
         steps:
           - name: Displaying Test Variable Name
             run: |
-              echo "Test Environment"
+              echo "Running in $Environment"
               echo "${{ vars.DEPLOYMENTNAME}}"
