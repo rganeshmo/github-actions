@@ -1,0 +1,21 @@
+name: 13 - Environments
+on: 
+    workflow_dispatch: 
+jobs:
+    build:
+        runs-on: self-hosted
+        environment: dev
+        steps:
+            - name: Displaying Dev Variable Name
+              run: |
+                echo "Dev Environment"
+                echo "${{ vars.DEPLOYMENTNAME}}"
+        
+    deploy:
+        runs-on: self-hosted
+        environment: test
+        steps:
+          - name: Displaying Test Variable Name
+            run: |
+              echo "Test Environment"
+              echo "${{ vars.DEPLOYMENTNAME}}"
