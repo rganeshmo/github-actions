@@ -27,9 +27,9 @@ jobs:
         if: ${{ github.event.inputs.environment == 'test' }}
         environment: test        
         env:
-          Environment: ${{ github.event.inputs.environment }}
+          Env: ${{ github.event.inputs.environment }}
         steps:
           - name: Build on Test
             run: |
-              echo "Running in $Environment"
+              echo "Running in $Env"
               echo "${{ vars.DEPLOYMENTNAME}}"
