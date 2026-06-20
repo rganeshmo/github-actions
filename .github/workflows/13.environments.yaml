@@ -10,26 +10,19 @@ on:
           - test
     
 jobs:
-    build:
+    build-dev:
         runs-on: self-hosted
         if: ${{ github.event.inputs.environment == 'dev' }}
-        environment: dev
-        env:
-          Environment: dev
+        environment: dev        
         steps:
             - name: Build on Dev
-              run: | 
-                echo "$Environment"
-                echo "${{ vars.DEPLOYMENTNAME}}"                
+              run: echo "${{ vars.DEPLOYMENTNAME }}"
         
-    deploy:
+    build-test:
         runs-on: self-hosted
         if: ${{ github.event.inputs.environment == 'test' }}
-        environment: test        
-        env:
-          Environment: test
+        environment: test
         steps:
           - name: Build on Test
-            run: |
-              echo "$Environment"
-              echo "${{ vars.DEPLOYMENTNAME}}"
+            run: echo "${{ vars.DEPLOYMENTNAME }}"
+              
