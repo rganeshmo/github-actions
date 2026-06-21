@@ -28,5 +28,8 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: my-artifact
+          path: deploy/result.txt
       - name: Verify
-        run: cat result.txt
+        run: |
+            cd  deploy
+            cat result.txt
