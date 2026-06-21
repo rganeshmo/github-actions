@@ -9,7 +9,7 @@ jobs:
       - name: Create file
         run: echo "Artifact Data" > result.txt
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: my-artifact
           path: result.txt
@@ -18,7 +18,7 @@ jobs:
     needs: build-job
     steps:
       - name: Download Artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: my-artifact
       - name: Verify
