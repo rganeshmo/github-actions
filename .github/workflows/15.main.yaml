@@ -5,6 +5,7 @@ on:
             environments:
                 description: Which Evironment to choose?
                 type: choice
+                default: dev
                 options:
                   - dev
                   - prod
