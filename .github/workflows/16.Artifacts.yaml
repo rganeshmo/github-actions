@@ -2,7 +2,7 @@ name: 16 - Artifact Workflow
 on: workflow_dispatch
 jobs:
   build-job:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -17,7 +17,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: my-artifact
-          path: build/
+          path: ${{ github.workflow }}/build/
 
   deploy-job:
     runs-on: ubuntu-latest
