@@ -12,13 +12,13 @@ jobs:
             mkdir build
             cd build         
             echo "Artifact Data" > result.txt
-            cat build/result.txt
+            cat result.txt
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v7
         with:
           name: my-artifact
-          path: result.txt
+          path: build/result.txt
 
   deploy-job:
     runs-on: self-hosted
