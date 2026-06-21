@@ -22,4 +22,6 @@ jobs:
         with:
           name: my-artifact
       - name: Verify
-        run: cat result.txt
+        run: |
+            ls -l
+            cat result.txt
