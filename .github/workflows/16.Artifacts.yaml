@@ -7,7 +7,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Create file
-        run: echo "Artifact Data" > result.txt
+        run: |
+            mkdir build 
+            cd build
+            echo "Artifact Data" > result.txt
       - name: Upload Artifact
         uses: actions/upload-artifact@v7
         with:
