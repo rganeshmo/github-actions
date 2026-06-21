@@ -1,0 +1,14 @@
+name: 15 - Main Workflow
+on: 
+    workflow_dispatch:
+        inputs:
+            environments:
+                description: Which Evironment to choose?
+                type: choice
+                options:
+                  - dev
+                  - prod
+jobs:
+  calling-Staging:    
+    uses: ./.github/workflows/14.Staging.yaml
+    

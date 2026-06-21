@@ -1,0 +1,22 @@
+name: 14 - Staging Workflow
+run-name: ${{ github.event }}
+on: workflow_call
+jobs:
+    dev:
+        runs-on: self-hosted
+        if: ${{ github.event.inputs.environments == 'dev'}}
+        env:
+            dev_stage_name: ${{ github.event.inputs.environments }}
+        steps:
+            - name: Dev-Step
+              run: echo "Running on $dev_stage_name"
+
+    
+    prod:
+        runs-on: self-hosted
+        if: ${{github.event.inputs.environments == 'prod'}}
+        env:
+            prod_stage_name: ${{github.event.inputs.environments }}
+        steps:
+          - name: Prod-Step
+            run: echo "Running on $prod_stage_name"
