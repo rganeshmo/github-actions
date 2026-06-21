@@ -6,7 +6,7 @@ jobs:
         runs-on: self-hosted
         if: ${{ github.event.inputs.environments == 'dev'}}
         env:
-            dev_stage_name: $github.event.inputs.environments
+            dev_stage_name: ${{github.event.inpus.environments.dev}}
         steps:
             - name: Dev-Step
               run: echo "Running on $dev_stage_name"
@@ -16,7 +16,7 @@ jobs:
         runs-on: self-hosted
         if: ${{github.event.inputs.environments == 'prod'}}
         env:
-            prod_stage_name: $github.event.inputs.environments
+            prod_stage_name: ${{github.event.inpus.environments.prod}}
         steps:
           - name: Prod-Step
             run: echo "Running on $prod_stage_name"
