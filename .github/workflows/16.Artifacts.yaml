@@ -24,6 +24,7 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: my-artifact
+          path: build
       - name: Verify
         run: |
             ls -l
