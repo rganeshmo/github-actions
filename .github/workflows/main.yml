@@ -1,0 +1,23 @@
+name: Run JavaScript Script
+on: workflow_dispatch
+jobs:
+  build:  
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download your repository code onto the runner
+      uses: actions/checkout@v7.0.0
+
+    - name: Install Node.js environment on the runner
+      uses: actions/setup-node@v4
+      with:
+          node-version: '20'
+
+    - name: Install Project Dependencies
+      run: npm install
+
+    - name: Run your index.js file
+      run: node index.js
+    
+      
+    
+  
