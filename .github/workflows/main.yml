@@ -12,8 +12,8 @@ jobs:
       with:
           node-version: '20'
 
-    - name: Install Project Dependencies
-      run: npm install
+    # - name: Install Project Dependencies
+    #   run: npm install
 
     - name: Run your index.js file
       run: node index.js
