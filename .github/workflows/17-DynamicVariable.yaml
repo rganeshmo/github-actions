@@ -3,9 +3,12 @@ on: workflow_dispatch
 jobs:
   dynamic_variable:
     runs-on: ubuntu-latest
+    env:
+      firstname: ganesh
+      lastname: moorthy
     steps:
       - name: Settting Variable
-        run: echo "Repository=${{ github.event.repository }}" >> $GITHUB_ENV
+        run: echo "FullName=$firstname-$lastname >> $GITHUB_ENV
 
       - name: Displaying Variable
-        run: echo "Hi $Repository"
+        run: echo "Hi $FullName"
