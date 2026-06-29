@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Settting Variable
-        run: echo "name=ganesh" >> $GITHUB_ENV
+        run: echo "Repository=${{ github.event.repository }}" >> $GITHUB_ENV
 
       - name: Displaying Variable
-        run: echo "Hi $name"
+        run: echo "Hi $Repository"
