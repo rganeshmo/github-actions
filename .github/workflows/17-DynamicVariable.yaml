@@ -8,7 +8,7 @@ jobs:
       lastname: moorthy
     steps:
       - name: Settting Variable
-        run: echo "FullName=$firstname-$lastname >> $GITHUB_ENV
+        run: echo "FullName=$firstname-$lastname" >> $GITHUB_ENV
 
       - name: Displaying Variable
         run: echo "Hi $FullName"
