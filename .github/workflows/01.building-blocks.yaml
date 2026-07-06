@@ -7,7 +7,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
           - name: Shows Current Branch
-            run: echo "${{ github.ref_name }}
+            run: echo "${{ github.ref_name }}"
             
     echo-hello:
         runs-on: ubuntu-latest
