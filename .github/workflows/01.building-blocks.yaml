@@ -8,7 +8,7 @@ jobs:
           - name: Shows Current Branch
             run: |
                 echo "${{ github.ref_name }}"
-                echo "Variable name is ${{ vars.DEPLOYMENTNAME }}"
+                echo "Variable name is ${{ vars.NAME }}"
             
     echo-hello:
         runs-on: ubuntu-latest
