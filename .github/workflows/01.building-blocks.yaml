@@ -3,6 +3,12 @@ on:
     workflow_dispatch
 
 jobs:
+    branch-name:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Shows Current Branch
+            run: echo "${{ github.ref_name }}
+            
     echo-hello:
         runs-on: ubuntu-latest
         steps:
