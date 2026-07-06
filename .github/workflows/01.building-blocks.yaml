@@ -1,13 +1,14 @@
 name: 01-Building Blocks
 on:
     workflow_dispatch
-
 jobs:
     branch-name:
         runs-on: ubuntu-latest
         steps:
           - name: Shows Current Branch
-            run: echo "${{ github.ref_name }}"
+            run: |
+                echo "${{ github.ref_name }}"
+                echo "Variable ${{ vars.DEPLOYMENTNAME }}
             
     echo-hello:
         runs-on: ubuntu-latest
