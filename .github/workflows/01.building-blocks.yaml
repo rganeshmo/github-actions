@@ -1,8 +1,6 @@
 name: 01-Building Blocks
 on:
     workflow_dispatch
-env:
-    name: ${{ vars.DEPLOYMENTNAME }}
 jobs:
     branch-name:
         runs-on: ubuntu-latest
@@ -10,7 +8,7 @@ jobs:
           - name: Shows Current Branch
             run: |
                 echo "${{ github.ref_name }}"
-                echo "Variable is $name"
+                echo "Variable name is ${{ vars.DEPLOYMENTNAME }}"
             
     echo-hello:
         runs-on: ubuntu-latest
