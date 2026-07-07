@@ -10,7 +10,7 @@ jobs:
       - name: Building Application
         run: |
           echo "Calling Variable from configuation variable is $Deployment"
-          echo "Calling Variable from github setting is ${{ vars.DEPLOYMENTNAME}}
+          echo "Calling Variable from github setting is ${{ vars.DEPLOYMENTNAME}}"
     
     
       
