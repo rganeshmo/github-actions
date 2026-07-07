@@ -1,0 +1,17 @@
+name: Application
+run-name: Application_${{ github.ref_name }}
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      Deployment: ${{ vars.DEPLOYMENTNAME}}
+    steps:
+      - name: Building Application
+        run: |
+          echo "Calling Variable from configuation variable is $Deployment"
+          echo "Calling Variable from github setting is ${{ vars.DEPLOYMENTNAME}}
+    
+    
+      
+    
